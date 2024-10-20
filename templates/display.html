@@ -1,0 +1,81 @@
+<html>
+{{web_data[url_sequence]}}
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.css" />
+
+<script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.js"></script>
+  <style>
+.styled-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    width: -webkit-fill-available;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+.styled-table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+}
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+.styled-table tbody tr.active-row {
+    font-weight: bold;
+    color: #009879;
+}
+</style>
+
+<table id="ipo-table" class="styled-table">
+    <thead>
+        <tr>
+            <th>Company</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Share Type</th>
+            <th>Ticker Symbol</th>
+            <th>Sector Name</th>
+            <th>Price Per Unit</th>
+            <th>Total Units</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+      {% for value in web_data %}
+        <tr class="active-row">
+            <td>{{ value['company_name'] }}</td>
+            <td>{{ value['start_date'] }}</td>
+            <td>{{ value['end_date'] }}</td>
+            <td>{{ value['share_type'] }}</td>
+            <td>{{ value['stock_symbol'] }}</td>
+            <td>{{ value['sector_name'] }}</td>
+            <td>{{ value['price_per_unit'] }}</td>
+            <td>{{ value['units'] }}</td>
+            <td>{{ value['status'] }}</td>
+          
+        </tr>
+      {% endfor %}
+        <!-- and so on... -->
+    </tbody>
+</table>
+
+  <script type="text/javascript">
+   let table = new DataTable('#ipo-table', {
+    // options
+});
+  </script>
+</html>
