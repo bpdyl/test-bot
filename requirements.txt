@@ -46,3 +46,5 @@ Werkzeug==3.0.4
 wsproto==1.2.0
 zipp==3.20.2
 gunicorn==19.7.1
+pandas
+tabulate
