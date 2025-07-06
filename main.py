@@ -118,7 +118,7 @@ def process_user_application(user, company_name, bot, ipo_id, open_issues_for_us
     finally:
         bot.quit()
 
-def main_loop():
+def main():
     logger.info("🚀 Starting Enhanced IPO Bot with Telegram approval, status sync, and ignore support")
     logger.info(f"📊 Configuration: {config.to_dict()}")
     user_details = get_user_details_safe()
@@ -264,4 +264,4 @@ IPO Application Summary:\nCompany Name: {selected_ipo['company_name']}\nDate: {d
         time.sleep(config.CHECK_INTERVAL_SECONDS)
 
 if __name__ == "__main__":
-    main_loop() 
+    main()
