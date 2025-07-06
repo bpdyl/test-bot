@@ -4,7 +4,7 @@ from flask.templating import render_template
 from threading import Thread
 import pytz
 import logging
-from driver import fetch_investment_opportunities
+from driver import fetch_investment_opportunities_enhanced
 
 logging.basicConfig(level=logging.WARNING)
 logger = logging.getLogger(__name__)
@@ -19,7 +19,7 @@ def home():
     print("--------------------------------")
     logger.info(np_time)
     print("--------------------------------")
-    upcoming_ipos = fetch_investment_opportunities()
+    upcoming_ipos = fetch_investment_opportunities_enhanced()
     return render_template('display.html', web_data=upcoming_ipos)
 
 
