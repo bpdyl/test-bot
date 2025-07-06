@@ -12,7 +12,7 @@ def send_mail(msg_content):
 
   msg['Subject'] = 'Subject IPO Filled'
   msg['From'] = 'ipobot_noreply@gmail.com'
-  msg['To'] = ['bibekpaudyal23@gmail.com','suvanipaudyal01@gmail.com']
+  msg['To'] = ['bibekpaudyal23@gmail.com']
   server=smtplib.SMTP('smtp.gmail.com',587)
   server.starttls()
   server.login(cred1,cred2)
