@@ -1,0 +1,8 @@
+logs/
+cache/
+ipo_ignore.json
+ipo_status.json
+screenshots/
+__pycache__/
+.cursor
+.vscode
